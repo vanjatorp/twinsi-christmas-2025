@@ -38,3 +38,13 @@ export const snowflakes = [
   { char: '*', depth: 'bg', drift: '20px', left: '20%', delay: '2s' },
   { char: '❄', depth: 'mg', drift: '-15px', left: '55%', delay: '4s' },
 ];
+
+export const gifts = [
+  { type: 'music', url: 'https://open.spotify.com/playlist/38NJHtg1gq9NDjAc81QiXH' },
+  { type: 'video', url: 'https://youtu.be/nc3UBeg13fg' },
+  { type: 'game', url: 'https://yourgame.com/day2' },
+  { type: 'image', url: 'https://yourcdn.com/images/day3.jpg' },
+  { type: 'video', url: 'https://youtu.be/nc3UBeg13fg' },
+  { type: 'download', url: 'https://yourcdn.com/cards/day4.pdf' },
+  // Add up to 24 gifts
+];

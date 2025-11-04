@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Twinsi Christmas Advent Calendar 2025</title>
     <link rel="stylesheet" href="public/styles/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Iceberg&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   </head>
   <body>
     <div class="scene">
@@ -46,6 +48,31 @@
       <div class="mountains back"></div>
       <div class="mountains front"></div>
     </div>
+
+    <!-- 🎁 Advent Calendar UI -->
+    <div class="calendar-wrapper">
+      <div class="calendar-title">
+        <img src="public/assets/twinsi-logo.png" alt="Twinsi Christmas Advent Calendar 2025" class="calendar-logo" />
+      </div>
+
+      <div class="countdown-timer">
+        <p class="countdown-inline">
+           New 🎁 in: <span id="countdown" class="countdown-value">Loading...</span>
+        </p>
+      </div>
+
+      <div class="advent-calendar"></div>
+    </div>
+
+     <!-- 🎁 Modal -->
+    <div class="gift-modal hidden">
+      <div class="gift-modal-content">
+        <button class="close-modal">✖</button>
+        <h2 class="gift-title"></h2>
+        <div class="gift-content"></div>
+      </div>
+    </div>
+
      <!-- Scripts -->
     <script type="module" src="src/js/main.js"></script>
   </body>

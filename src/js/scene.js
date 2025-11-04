@@ -1,4 +1,4 @@
-import { starPositions, snowflakes } from './data.js';
+import { starPositions, snowflakes,  } from './data.js';
 
 export function renderStars(container) {
   starPositions.forEach(pos => {
@@ -21,4 +21,13 @@ export function renderSnowflakes(container) {
     el.style.animationDelay = flake.delay;
     container.appendChild(el);
   });
+}
+
+export function setupConfettiCanvas() {
+  const canvas = document.createElement('canvas');
+  canvas.classList.add('confetti-canvas');
+  document.body.appendChild(canvas);
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  return canvas;
 }
