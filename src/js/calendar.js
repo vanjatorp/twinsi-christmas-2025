@@ -61,16 +61,17 @@ export function createBox(day, now, currentYear, confettiCanvas) {
         break;
 
 
-       case 'video':
+      case 'video':
         content = `
           <div class="gift-box-content">
-            <a href="${gift.url}" target="_blank" style="display:block; text-align:center;">
+            <a href="${gift.url}" target="_blank" class="delayed-link" style="pointer-events:none; display:block; text-align:center;">
               <img src="https://img.youtube.com/vi/nc3UBeg13fg/hqdefault.jpg" alt="Watch on YouTube" style="width:100%; border-radius:8px;" />
               <p style="margin-top:0.5rem; font-size:1.2rem;">✨ Watch the Video on YouTube</p>
             </a>
           </div>
         `;
         break;
+
 
       case 'game':
         content = `<a href="${gift.url}" target="_blank">🎮 Play Game</a>`;
@@ -94,6 +95,11 @@ export function createBox(day, now, currentYear, confettiCanvas) {
       modal.querySelector('.gift-content').innerHTML = content;
       modalContent.classList.add('animate');
     });
+
+    // Delay link activation to prevent accidental clicks during animation
+    setTimeout(() => {
+      modal.querySelector('.delayed-link')?.style.setProperty('pointer-events', 'auto');
+    }, 300);
 
 
     if (now >= unlockTime && now < lockTime) {
