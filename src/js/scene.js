@@ -12,7 +12,14 @@ export function renderStars(container) {
 }
 
 export function renderSnowflakes(container) {
-  snowflakes.forEach(flake => {
+  const ram = navigator.deviceMemory || 2;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion)').matches;
+  const isSmallScreen = window.innerWidth < 500;
+  const isLowEnd = ram <= 2 || prefersReducedMotion || isSmallScreen;
+
+  const flakes = isLowEnd ? snowflakes.slice(0, 6) : snowflakes;
+
+  flakes.forEach(flake => {
     const el = document.createElement('div');
     el.classList.add('snowflake', flake.depth);
     el.textContent = flake.char;

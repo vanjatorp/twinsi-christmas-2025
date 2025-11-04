@@ -32,7 +32,7 @@ export function createBox(day, now, currentYear, confettiCanvas) {
   }   
 
   const gift = gifts[day - 1];
-  box.addEventListener('click', () => {
+  box.addEventListener('pointerdown', () => {
     if (box.classList.contains('locked') || box.classList.contains('opened')) return;
 
     box.classList.add('opened');
@@ -78,15 +78,18 @@ export function createBox(day, now, currentYear, confettiCanvas) {
       case 'download':
         content = `<a href="${gift.url}" download>📩 Download Christmas Card</a>`;
         break;
+        
     }
 
     const modal = document.querySelector('.gift-modal');
-    modal.querySelector('.gift-title').textContent = `🎁 Day ${day}`;
     modal.classList.remove('hidden');
-    setTimeout(() => {
-      modal.querySelector('.gift-content').innerHTML = content;
-    }, 50);
+    modal.querySelector('.gift-modal-content').classList.remove('animate'); // reset animation
 
+    setTimeout(() => {
+      modal.querySelector('.gift-title').textContent = `🎁 Day ${day}`;
+      modal.querySelector('.gift-content').innerHTML = content;
+      modal.querySelector('.gift-modal-content').classList.add('animate'); // trigger animation
+    }, 50);
 
     if (now >= unlockTime && now < lockTime) {
       confetti.create(confettiCanvas, { resize: true })({
