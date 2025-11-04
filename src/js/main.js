@@ -1,14 +1,23 @@
 import { renderStars, renderSnowflakes, setupConfettiCanvas } from './scene.js';
 import { populateCalendar, updateCountdown } from './calendar.js';
 
-const ram = navigator.deviceMemory || 2;
+const ram = navigator.deviceMemory;
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion)').matches;
 const isSmallScreen = window.innerWidth < 500;
-const isLowEnd = ram <= 2 || prefersReducedMotion || isSmallScreen;
+
+// Only apply low-effects if RAM is known and low, or other conditions are true
+const isLowEnd =
+  (typeof ram === 'number' && ram <= 2) ||
+  prefersReducedMotion ||
+  isSmallScreen;
 
 if (isLowEnd) {
   document.body.classList.add('low-effects');
+  console.log('🌙 Low-effects mode activated');
+} else {
+  console.log('✨ Full-effects mode activated');
 }
+
 
 const starContainer = document.querySelector('.stars');
 const snowContainer = document.querySelector('.snowflakes');

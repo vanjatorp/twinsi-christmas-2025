@@ -905,14 +905,13 @@ body.low-effects .snowflake {
 }
 
 body.low-effects .gift-modal-content.animate {
-  animation: none !important;
-  transform: scale(1) !important;
-}
-
-body.low-effects .gift-modal-content.animate {
   animation: fadeIn 0.3s ease-out !important;
   transform: none !important;
+  margin: auto;
+  max-width: 90vw;
+  max-height: 90vh;
 }
+
 
 
 .background-layer {
@@ -943,3 +942,6 @@ body.low-effects .aurora-layer.secondary {
   }
 }
 
+.gift-modal-content {
+  position: relative;
+}
