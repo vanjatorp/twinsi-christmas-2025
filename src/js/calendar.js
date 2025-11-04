@@ -82,8 +82,11 @@ export function createBox(day, now, currentYear, confettiCanvas) {
 
     const modal = document.querySelector('.gift-modal');
     modal.querySelector('.gift-title').textContent = `🎁 Day ${day}`;
-    modal.querySelector('.gift-content').innerHTML = content;
     modal.classList.remove('hidden');
+    setTimeout(() => {
+      modal.querySelector('.gift-content').innerHTML = content;
+    }, 50);
+
 
     if (now >= unlockTime && now < lockTime) {
       confetti.create(confettiCanvas, { resize: true })({
