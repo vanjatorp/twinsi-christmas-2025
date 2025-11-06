@@ -5,7 +5,6 @@ const ram = navigator.deviceMemory;
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion)').matches;
 const isSmallScreen = window.innerWidth < 375;
 
-// Only apply low-effects if RAM is known and low, or other conditions are true
 const isLowEnd =
   (typeof ram === 'number' && ram <= 2) ||
   prefersReducedMotion ||
@@ -18,23 +17,46 @@ if (isLowEnd) {
   console.log('✨ Full-effects mode activated');
 }
 
-
 const starContainer = document.querySelector('.stars');
 const snowContainer = document.querySelector('.snowflakes');
 export let confettiCanvas = null;
 
-
 renderStars(starContainer);
 renderSnowflakes(snowContainer);
 
-const today = new Date();
-const currentYear = today.getFullYear();
-const now = new Date(currentYear, 11, 5, 12, 0); // testing
+const currentYear = new Date().getFullYear();
+const now = new Date(currentYear, 11, 5, 23, 59); // Dec 1, 23:59
 
+
+// Initial render
+document.querySelector('.advent-calendar').innerHTML = '';
 populateCalendar(now, currentYear, confettiCanvas);
 updateCountdown(now, currentYear);
-setInterval(() => updateCountdown(now, currentYear), 1000);
 
+// Time ticking forward
+let lastDay = now.getDate();
+let lastMinute = now.getMinutes();
+
+setInterval(() => {
+  now.setSeconds(now.getSeconds() + 1);
+  updateCountdown(now, currentYear);
+
+  const currentDay = now.getDate();
+  const currentMinute = now.getMinutes();
+
+  if (currentDay !== lastDay || currentMinute !== lastMinute) {
+    lastDay = currentDay;
+    lastMinute = currentMinute;
+    document.querySelector('.advent-calendar').innerHTML = '';
+    populateCalendar(now, currentYear, confettiCanvas);
+  }
+
+  console.log('time:', now.toLocaleString());
+}, 1000);
+
+
+
+// Modal close handler
 document.querySelector('.gift-modal').addEventListener('pointerdown', (e) => {
   if (e.target.classList.contains('gift-modal') || e.target.classList.contains('close-modal')) {
     const modal = document.querySelector('.gift-modal');

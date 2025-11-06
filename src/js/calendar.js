@@ -22,16 +22,27 @@ export function createBox(day, now, currentYear, confettiCanvas) {
   statusIcon.classList.add('status-icon');
   box.appendChild(statusIcon);
 
-  const unlockTime = new Date(currentYear, 11, day, 0, 1);
+  const unlockTime = new Date(currentYear, 11, day, 0, 0);
   const lockTime = new Date(currentYear, 11, day + 1, 0, 0);
+  const isToday =
+    now.getDate() === day &&
+    now.getMonth() === 11 &&
+    now.getFullYear() === currentYear;
+    console.log(`Box ${day}: isToday = ${isToday}`);
+
 
   if (now < unlockTime) {
     box.classList.add('locked');
     statusIcon.textContent = '🔒';
-    } else if (isBetween(now, unlockTime, lockTime)) {
+  } else {
     box.classList.add('available');
-    statusIcon.textContent = '🌟';
-  }   
+    if (isToday) { 
+      box.classList.add('today');
+      statusIcon.textContent = '🌟'; 
+    }
+  }
+  
+  
 
   const gift = gifts[day - 1];
   box.addEventListener('pointerdown', () => {
@@ -120,6 +131,7 @@ export function createBox(day, now, currentYear, confettiCanvas) {
 
 export function populateCalendar(now, currentYear, confettiCanvas) {
   const calendar = document.querySelector('.advent-calendar');
+  calendar.innerHTML = ''; // Clear old boxes
   for (let i = 1; i <= 24; i++) {
     calendar.appendChild(createBox(i, now, currentYear, confettiCanvas));
   }
@@ -135,7 +147,10 @@ export function updateCountdown(now, currentYear) {
     return;
   }
 
-  const nextUnlock = new Date(currentYear, now.getMonth(), now.getDate() + 1, 0, 1);
+  const nextUnlock = new Date(now);
+  nextUnlock.setDate(now.getDate() + 1);
+  nextUnlock.setHours(0, 0, 0, 0);
+
   const diff = nextUnlock - now;
 
   if (diff <= 0) {
