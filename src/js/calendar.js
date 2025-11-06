@@ -42,8 +42,6 @@ export function createBox(day, now, currentYear, confettiCanvas) {
     }
   }
   
-  
-
   const gift = gifts[day - 1];
   box.addEventListener('pointerdown', () => {
     if (box.classList.contains('locked')) return;
@@ -153,7 +151,7 @@ export function updateCountdown(now, currentYear) {
   }
   if (now.getDate() > 24 && now.getMonth() === 11) {
     countdownPrefix.textContent = '';
-    countdownEl.textContent = '🎄 Hope you had a magical Christmas, see you next year!';
+    countdownEl.textContent = '🎄 Hope you had a magical Christmas, see you next year! - Vanja & Annette 💛';
     return;
   }
   if (isChristmasEve(now)) {

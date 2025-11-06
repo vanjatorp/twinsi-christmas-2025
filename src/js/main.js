@@ -25,7 +25,7 @@ renderStars(starContainer);
 renderSnowflakes(snowContainer);
 
 const currentYear = new Date().getFullYear();
-const now = new Date(currentYear, 11, 25, 0, 0); // Dec 1, 23:59
+const now = new Date(currentYear, 11, 23, 23, 59); // Dec 23, 23:59 Change for testing
 
 
 // Initial render
