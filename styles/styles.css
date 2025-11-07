@@ -719,6 +719,7 @@ body, html {
   overflow: auto;
   transform: scale(0.5);
   animation: zoomInGift 0.4s ease forwards;
+  font-family: 'Iceberg', sans-serif;
 }
 
 .close-modal {

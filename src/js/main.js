@@ -12,9 +12,6 @@ const isLowEnd =
 
 if (isLowEnd) {
   document.body.classList.add('low-effects');
-  console.log('🌙 Low-effects mode activated');
-} else {
-  console.log('✨ Full-effects mode activated');
 }
 
 const starContainer = document.querySelector('.stars');
@@ -26,7 +23,6 @@ renderSnowflakes(snowContainer);
 
 const currentYear = new Date().getFullYear();
 const now = new Date(currentYear, 11, 23, 23, 59); // Dec 23, 23:59 Change for testing
-
 
 // Initial render
 document.querySelector('.advent-calendar').innerHTML = '';
@@ -51,15 +47,14 @@ const intervalId = setInterval(() => {
     populateCalendar(now, currentYear, confettiCanvas);
   }
 
-  console.log('time:', now.toLocaleString());
+  // console.log('time:', now.toLocaleString());
 
   // Stop ticking after Dec 24
   if (now.getDate() >= 24 && now.getMonth() === 11) {
     clearInterval(intervalId);
-    console.log('🎄 Calendar complete. No more updates.');
+    //console.log('🎄 Calendar complete. No more updates.');
   }
 }, 1000);
-
 
 // Modal close handler
 document.querySelector('.gift-modal').addEventListener('pointerdown', (e) => {

@@ -28,8 +28,7 @@ export function createBox(day, now, currentYear, confettiCanvas) {
     now.getDate() === day &&
     now.getMonth() === 11 &&
     now.getFullYear() === currentYear;
-    console.log(`Box ${day}: isToday = ${isToday}`);
-
+   // console.log(`Box ${day}: isToday = ${isToday}`);
 
   if (now < unlockTime) {
     box.classList.add('locked');
@@ -69,7 +68,6 @@ export function createBox(day, now, currentYear, confettiCanvas) {
         `;
         break;
 
-
       case 'video':
         content = `
           <div class="gift-box-content">
@@ -81,7 +79,6 @@ export function createBox(day, now, currentYear, confettiCanvas) {
         `;
         break;
 
-
       case 'game':
         content = `<a href="${gift.url}" target="_blank">🎮 Play Game</a>`;
         break;
@@ -90,8 +87,7 @@ export function createBox(day, now, currentYear, confettiCanvas) {
         break;
       case 'download':
         content = `<a href="${gift.url}" download>📩 Download Christmas Card</a>`;
-        break;
-        
+        break; 
     }
 
     const modal = document.querySelector('.gift-modal');
@@ -109,7 +105,6 @@ export function createBox(day, now, currentYear, confettiCanvas) {
     setTimeout(() => {
       modal.querySelector('.delayed-link')?.style.setProperty('pointer-events', 'auto');
     }, 300);
-
 
     if (now >= unlockTime && now < lockTime) {
       if (!confettiCanvas) {
@@ -159,7 +154,6 @@ export function updateCountdown(now, currentYear) {
     countdownEl.textContent = '🎄 Merry Christmas!';
     return;
   }
-
 
   const nextUnlock = new Date(now);
   nextUnlock.setDate(now.getDate() + 1);
