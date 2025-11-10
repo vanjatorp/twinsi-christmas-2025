@@ -157,19 +157,10 @@ export function createBox(day, now, currentYear, confettiCanvas) {
         `;
         break;
 
-      case 'poem':
+      case 'poem1':
         content = `
           <div class="gift-box-content">
-            <div class="shiny-badge">
-              <img src="${gift.url}" alt="Participation Badge" class="bobbling-badge" />
-            </div>
-            <p>
-              🐾 Twinsi Bear welcomes you to the calendar!  
-              Here’s your badge for joining the adventure — show it with pride.
-            </p>
-            <p>
-              ✨<a href="${gift.url}">Download Your Badge</a>
-            </p>
+              <img src="${gift.url}" alt="Christmas Poem" />
           </div>
         `;
         break;    
@@ -210,7 +201,21 @@ export function createBox(day, now, currentYear, confettiCanvas) {
         `;
         break;        
 
-      case 'video':
+      case 'tarot1':
+        content = `
+          <div class="gift-box-content">
+            <p>
+              🐾 Twinsi Bear has invited Annette to draw the cards today.  
+              Let’s see what they reveal…
+            </p>
+            <p>
+              ✨ <a href="https://youtu.be/nc3UBeg13fg" target="_blank" class="calendar-link">Watch the Reading</a>
+            </p>
+          </div>
+        `;
+        break; 
+
+      case 'baristalysvideo':
         content = `
           <div class="gift-box-content">
             <a href="${gift.url}" target="_blank" class="delayed-link">
@@ -219,17 +224,30 @@ export function createBox(day, now, currentYear, confettiCanvas) {
             </a>
           </div>
         `;
+        break;   
+
+      case 'card-challenge':
+        content = `
+          <div class="gift-box-content">
+            <p>
+              🐾 Twinsi Bear’s Card Challenge:
+            </p>
+            <p>
+              Today’s gift is one you give away —  
+              a Christmas card, handpicked with love.
+            </p>
+            <p>
+              Find someone who wouldn’t expect it — maybe a neighbor, a quiet friend, or someone who’s been on your mind.  
+              Give them a card, and with it, a moment of warmth.
+            </p>
+            <p>
+              Twinsi believes in surprise joy — and you’re the perfect messenger. 🐾
+            </p>
+          </div>
+        `;
         break;
 
-      case 'game':
-        content = `<a href="${gift.url}" target="_blank">🎮 Play Game</a>`;
-        break;
-      case 'image':
-        content = `<img src="${gift.url}" alt="Gift Image" style="width:100%; border-radius:8px;" />`;
-        break;
-      case 'download':
-        content = `<a href="${gift.url}" download>📩 Download Christmas Card</a>`;
-        break; 
+      
     }
 
     const modal = document.querySelector('.gift-modal');

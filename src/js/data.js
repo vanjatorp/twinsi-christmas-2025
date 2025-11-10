@@ -44,26 +44,26 @@ export const gifts = [
   { type: 'badge', url: 'assets/gifts/twinsi_participation_badge2025.png' }, // Dec 2
   { type: 'card', url: 'assets/gifts/twinsi_christmas_card.png' }, // Dec 3
   { type: 'compliment-challenge', text: 'Give someone a heartfelt compliment today — something that makes them feel truly seen.' }, // Dec 4
-  { type: 'christmas-game', url: 'https://vtwin90.github.io/twinsi-cookie-catch/' },
+  { type: 'christmas-game', url: 'https://vtwin90.github.io/twinsi-cookie-catch/' },  // Dec 5
   
-  { type: 'poem', url: 'assets/gifts/twinsi_participation_badge2025.png' },
-  { type: 'unperfectdate-game', url: 'https://vtwin90.github.io/UN-PERFECT-DATE/' },
-  { type: 'video', url: 'https://youtu.be/nc3UBeg13fg' },
+  { type: 'poem1', url: 'assets/gifts/twinsi_participation_badge2025.png' },  // Dec 6
+  { type: 'unperfectdate-game', url: 'https://vtwin90.github.io/UN-PERFECT-DATE/' },  // Dec 7
+  { type: 'tarot1', url: 'https://youtu.be/nc3UBeg13fg' },  // Dec 8
+  { type: 'baristalysvideo', url: 'https://youtu.be/nc3UBeg13fg' },  // Dec 9
+  { type: 'card-challenge', text: 'Send a Christmas card to someone who wouldn’t expect it.' }, // Dec 10
+  
   { type: 'download', url: 'https://yourcdn.com/cards/day4.pdf' },
-  
-  { type: 'video', url: 'https://youtu.be/nc3UBeg13fg' },
+  { type: 'game', url: 'https://yourgame.com/day2' },
+  { type: 'game', url: 'https://yourgame.com/day2' },
+  { type: 'game', url: 'https://yourgame.com/day2' },
+  { type: 'tarot2', url: 'https://youtu.be/nc3UBeg13fg' },
   { type: 'game', url: 'https://yourgame.com/day2' },
   { type: 'game', url: 'https://yourgame.com/day2' },
   { type: 'game', url: 'https://yourgame.com/day2' },
   { type: 'game', url: 'https://yourgame.com/day2' },
   { type: 'game', url: 'https://yourgame.com/day2' },
   { type: 'game', url: 'https://yourgame.com/day2' },
-  { type: 'game', url: 'https://yourgame.com/day2' },
-  { type: 'game', url: 'https://yourgame.com/day2' },
-  { type: 'game', url: 'https://yourgame.com/day2' },
-  { type: 'game', url: 'https://yourgame.com/day2' },
-  { type: 'game', url: 'https://yourgame.com/day2' },
-  { type: 'game', url: 'https://yourgame.com/day2' },
+  { type: 'tarot3', url: 'https://youtu.be/nc3UBeg13fg' },
   { type: 'game', url: 'https://yourgame.com/day2' },
   { type: 'game', url: 'https://yourgame.com/day2' },
   // Add up to 24 gifts
