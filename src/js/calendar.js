@@ -122,21 +122,43 @@ export function createBox(day, now, currentYear, confettiCanvas) {
         break;
 
       case 'christmas-game':
-      content = `
-        <div class="gift-box-content" style="text-align:center; color:white; padding:1rem; max-width:500px; margin:0 auto;">
-          <iframe
-            src="${gift.url}"
-            width="320"
-            height="480"
-            style="border: none; border-radius: 12px; box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);">
-          </iframe>
+        const isMobile = window.innerWidth < 768;
 
-          <p style="font-size:1.1rem;">
-            🎮 <a href="${gift.url}" target="_blank" style="color:white; text-decoration:underline;">Play the Christmas Game</a>
+        const gameIntro = `
+          <p style="margin-bottom:1rem;">
+            🐾 Twinsi Bear has a special surprise for you —  
+            a magical Christmas game where cookies fall from the sky and sparkle fills the air.  
+            Catch as many as you can, and see if you can find the golden bonus cookie before time runs out!
           </p>
-        </div>
-      `;
-      break;
+        `;
+
+        const gameEmbed = isMobile
+          ? `${gameIntro}
+            <a href="${gift.url}" target="_blank" class="calendar-link">
+              🎮 Play Twinsi’s Cookie Catch
+            </a>`
+          : `<iframe
+              src="${gift.url}"
+              width="320"
+              height="480"
+              style="border: none; border-radius: 12px; box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);">
+            </iframe>`;
+
+        const fullGameLink = isMobile
+          ? ''
+          : `<p style="font-size:1.1rem;">
+              🎮 <a href="${gift.url}" target="_blank" style="color:white; text-decoration:underline;">Open Full Game</a>
+            </p>`;
+
+        content = `
+          <div class="gift-box-content" style="text-align:center; color:white; padding:1rem; max-width:500px; margin:0 auto;">
+            ${gameEmbed}
+            ${fullGameLink}
+          </div>
+        `;
+        break;
+
+
 
       case 'video':
         content = `
