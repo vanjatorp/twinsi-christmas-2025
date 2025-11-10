@@ -125,7 +125,7 @@ export function createBox(day, now, currentYear, confettiCanvas) {
         const isMobile = window.innerWidth < 768;
 
         const gameIntro = `
-          <p style="margin-bottom:1rem;">
+          <p>
             🐾 Twinsi Bear has a special surprise for you —  
             a magical Christmas game where cookies fall from the sky and sparkle fills the air.  
             Catch as many as you can, and see if you can find the golden bonus cookie before time runs out!
@@ -140,25 +140,75 @@ export function createBox(day, now, currentYear, confettiCanvas) {
           : `<iframe
               src="${gift.url}"
               width="320"
-              height="480"
-              style="border: none; border-radius: 12px; box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);">
+              height="480">
             </iframe>`;
 
         const fullGameLink = isMobile
           ? ''
-          : `<p style="font-size:1.1rem;">
-              🎮 <a href="${gift.url}" target="_blank" style="color:white; text-decoration:underline;">Open Full Game</a>
+          : `<p>
+              🎮 <a href="${gift.url}" class="calendar-link" target="_blank">Open Full Game</a>
             </p>`;
 
         content = `
-          <div class="gift-box-content" style="text-align:center; color:white; padding:1rem; max-width:500px; margin:0 auto;">
+          <div class="gift-box-content">
             ${gameEmbed}
             ${fullGameLink}
           </div>
         `;
         break;
 
+      case 'poem':
+        content = `
+          <div class="gift-box-content">
+            <div class="shiny-badge">
+              <img src="${gift.url}" alt="Participation Badge" class="bobbling-badge" />
+            </div>
+            <p>
+              🐾 Twinsi Bear welcomes you to the calendar!  
+              Here’s your badge for joining the adventure — show it with pride.
+            </p>
+            <p>
+              ✨<a href="${gift.url}">Download Your Badge</a>
+            </p>
+          </div>
+        `;
+        break;    
 
+      case 'unperfectdate-game':
+        const viewonMobile = window.innerWidth < 768;
+
+        const dategameIntro = `
+          <p style="margin-bottom:1rem;">
+            🐾 Twinsi Bear has something a little quirky for you today —  
+            a not-so-perfect date game full of awkward moments, and unexpected joy.  
+            Choose your path and see where it leads!
+          </p>
+        `;
+
+        const dategameEmbed = viewonMobile
+          ? `${dategameIntro}
+            <a href="${gift.url}" target="_blank" class="calendar-link">
+              🎮 Play the (UN)Perfect Date Game
+            </a>`
+          : `<iframe
+              src="${gift.url}"
+              width="320"
+              height="480">
+            </iframe>`;
+
+        const datefullGameLink = viewonMobile
+          ? ''
+          : `<p>
+              🎮 <a href="${gift.url}" class="calendar-link" target="_blank">Open Full Game</a>
+            </p>`;
+
+        content = `
+          <div class="gift-box-content">
+            ${dategameEmbed}
+            ${datefullGameLink}
+          </div>
+        `;
+        break;        
 
       case 'video':
         content = `
