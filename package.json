@@ -1,0 +1,31 @@
+{
+  "name": "twinsi-christmas-2025",
+  "version": "1.0.0",
+  "description": "Twinsi Christmas 2025 – HTML/CSS/JS responsive calendar with Playwright tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test:calendar && npm run test:gifts && npm run test:visuals && npm run test:game",
+    "test:calendar": "node src/js/test/test-calendar-layout.js",
+    "test:gifts": "node src/js/test/test-gift-boxes.js",
+    "test:visuals": "node src/js/test/test-visuals.js",
+    "test:game": "node src/js/test/test-game.js"
+  },
+  "keywords": [
+  "calendar",
+  "adventcalendar",
+  "christmas",
+  "responsive",
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "Playwright",
+  "testing",
+  "animation",
+  "game"
+],
+  "author": "Vanja VTwin90 (https://github.com/VTwin90)",
+  "license": "MIT",
+  "devDependencies": {
+    "playwright": "^1.56.1"
+  }
+}
