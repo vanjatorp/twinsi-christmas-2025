@@ -3,6 +3,7 @@
   <img src="https://img.shields.io/badge/CSS-3-blue" />
   <img src="https://img.shields.io/badge/JavaScript-ES6-yellow" />
   <img src="https://img.shields.io/badge/Responsive-Design-green" />
+  <img src="https://github.com/VTwin90/twinsi-christmas-2025/actions/workflows/test.yml/badge.svg" alt="CI Status" />
 </p>
 
 <br>
@@ -50,6 +51,7 @@ A festive, interactive calendar built with vanilla JavaScript, HTML, and CSS —
 - [Favicon & Manifest Notes](#favicon-manifest-notes)
 - [Getting Started](#getting-started)
 - [License](#license)
+- [Testing](#testing)
 - [Credits](#credits)
 
 <br>
@@ -128,6 +130,39 @@ start index.html
 xdg-open index.html
 
 ```
+<br>
+<a id="testing"></a> 
+## ✅ Testing 
+
+This project includes a full Playwright test suite to ensure layout, visuals, interactivity, and game logic work across browsers and devices. 
+
+### What's Tested 
+
+- **Calendar layout**: Responsive design verified across Chromium, Firefox, and WebKit (desktop, tablet, mobile) 
+- **Gift boxes**: Modal behavior and Spotify embed tested on mobile 
+- **Visuals**: Animated elements like stars, aurora, iceberg, icebear, and snoring effects 
+- **Game**: Canvas rendering and "Play Again" button visibility across engines 
+
+### How to Run Tests Locally Make sure Playwright is installed: 
+```bash 
+npm install 
+npx playwright install 
+``` 
+Then run all tests: 
+```bash 
+npm test 
+``` 
+Or run individual tests: 
+```bash 
+npm run test:calendar 
+npm run test:gifts 
+npm run test:visuals 
+npm run test:game 
+``` 
+
+### Manual Testing In addition to automated tests, the project was manually verified using Chrome DevTools device emulation. 
+
+### CI Integration Tests are automatically run via GitHub Actions. Artifacts such as screenshots and trace files are generated and stored locally (excluded from the repo via `.gitignore`).
 
 <br>
 
