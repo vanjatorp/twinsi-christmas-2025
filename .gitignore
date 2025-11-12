@@ -1,0 +1,26 @@
+# Node.js dependencies
+node_modules/
+package-lock.json
+
+# Playwright test artifacts
+screenshots/           # Game and visual test screenshots
+traces/                # Game and visual trace files
+test-results/          # Playwright test output
+playwright-report/     # Playwright HTML reports
+*.zip                  # Trace archives and other zipped artifacts
+
+# Logs
+*.log                  # General logs
+npm-debug.log*         # npm debug logs
+yarn-debug.log*        # yarn debug logs
+yarn-error.log*        # yarn error logs
+
+# OS-specific files
+.DS_Store              # macOS Finder metadata
+Thumbs.db              # Windows Explorer metadata
+
+# Environment variables
+.env                   # Local environment config
+
+# VSCode settings (optional)
+.vscode/               # Editor-specific settings
