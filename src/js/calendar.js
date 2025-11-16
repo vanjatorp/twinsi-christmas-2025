@@ -390,7 +390,8 @@ export function createBox(day, now, currentYear, confettiCanvas) {
             </p>
             <p>
               Twinsi Bear wants you to know:  
-              You are someone’s safe place. That’s a gift. 🐾
+              You are someone’s safe place. That’s a gift.
+              And remember: to be your safe space too.💛 🐾
             </p>
           </div>
         `;
