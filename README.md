@@ -16,8 +16,8 @@ A festive, interactive calendar built with vanilla JavaScript, HTML, and CSS —
 </p>
 
 <p align="center">
-  <a href="https://github.com/VTwin90">
-    <img src="https://img.shields.io/github/followers/VTwin90?label=follow&style=social" alt="GitHub followers" />
+  <a href="https://github.com/vanjatorp">
+    <img src="https://img.shields.io/github/followers/vanjatorp?label=follow&style=social" alt="GitHub followers" />
   </a>
   <a href="https://www.linkedin.com/in/vanja-torp/">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" />
@@ -25,17 +25,17 @@ A festive, interactive calendar built with vanilla JavaScript, HTML, and CSS —
 </p>
 
 <p align="center">
-  <a href="https://vtwin90.github.io/twinsi-christmas-2025/">
+  <a href="https://vanjatorp.github.io/twinsi-christmas-2025/">
     <img src="https://img.shields.io/badge/🎄 Live Demo -gold?style=for-the-badge" alt="Live Demo" />
   </a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/VTwin90/twinsi-christmas-2025/fork">
-    <img src="https://img.shields.io/github/forks/VTwin90/twinsi-christmas-2025?style=social" alt="Fork this repo" />
+  <a href="https://github.com/vanjatorp/twinsi-christmas-2025/fork">
+    <img src="https://img.shields.io/github/forks/vanjatorp/twinsi-christmas-2025?style=social" alt="Fork this repo" />
   </a>
-  <a href="https://github.com/VTwin90/twinsi-christmas-2025/stargazers">
-    <img src="https://img.shields.io/github/stars/VTwin90/twinsi-christmas-2025?style=social" alt="GitHub stars" />
+  <a href="https://github.com/vanjatorp/twinsi-christmas-2025/stargazers">
+    <img src="https://img.shields.io/github/stars/vanjatorp/twinsi-christmas-2025?style=social" alt="GitHub stars" />
   </a>
   <br>
   <em>If you like this project, give it a star ⭐!</em>
@@ -116,7 +116,7 @@ I used [RealFaviconGenerator](https://realfavicongenerator.net/) to generate the
 To run locally:
 
 ```bash
-git clone https://github.com/VTwin90/twinsi-christmas-2025.git
+git clone https://github.com/vanjatorp/twinsi-christmas-2025.git
 cd twinsi-christmas-2025
 open index.html
 
@@ -181,7 +181,7 @@ Creative content (e.g. music, videos, poems, cards) is not covered by this licen
 <br>
 
 <p align="center">
-  <a href="https://vtwin90.github.io/twinsi-christmas-2025/">
+  <a href="https://vanjatorp.github.io/twinsi-christmas-2025/">
     <img src="https://img.shields.io/badge/Made%20with-%E2%9D%A4-gold" alt="Made with Love" />
   </a>
 </p>
@@ -194,7 +194,7 @@ Creative content (e.g. music, videos, poems, cards) is not covered by this licen
 </p>
 
 <p align="center">
-  <a href="https://github.com/VTwin90">
+  <a href="https://github.com/vanjatorp">
     <img src="https://img.shields.io/badge/Created%20by-Vanja%20Torp-gold?style=for-the-badge" alt="Created by Vanja Torp" />
   </a>
 </p>
