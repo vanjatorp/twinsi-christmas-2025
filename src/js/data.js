@@ -46,12 +46,12 @@ export const gifts = [
   { type: 'compliment-challenge', text: 'Give someone a heartfelt compliment today — something that makes them feel truly seen.' }, // Dec 4
   { type: 'baristalysvideo', url: 'https://youtu.be/nc3UBeg13fg' }, // Dec 5
   { type: 'poem1', url: 'assets/gifts/the-spirit-of-christmas-poem.png' },  // Dec 6
-  { type: 'christmas-game', url: 'https://vtwin90.github.io/twinsi-cookie-catch/' }, // Dec 7 
+  { type: 'christmas-game', url: 'https://vanjatorp.github.io/twinsi-cookie-catch/' }, // Dec 7 
   { type: 'tarot1', url: 'https://youtu.be/nc3UBeg13fg' },  // Dec 8
   { type: 'card-challenge', text: 'Send a Christmas card to someone who wouldn’t expect it.' },  // Dec 9
   { type: 'poem2', url: 'assets/gifts/light-in-the-dark-poem.png' },  // Dec 10
   { type: 'encouragement1', text: '' },  // Dec 11
-  { type: 'unperfectdate-game', url: 'https://vtwin90.github.io/UN-PERFECT-DATE/' },  // Dec 12 
+  { type: 'unperfectdate-game', url: 'https://vanjatorp.github.io/UN-PERFECT-DATE/' },  // Dec 12 
   { type: 'drawing-challenge', text: '' },  // Dec 13
   { type: 'poem3', url: 'assets/gifts/christmas- reflections-poem.png' },  // Dec 14
   { type: 'tarot2', url: 'https://youtu.be/nc3UBeg13fg' },  // Dec 15
