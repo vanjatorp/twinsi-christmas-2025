@@ -8,6 +8,56 @@ body, html {
   font-family: sans-serif;
 }
 
+a {
+ font-family: 'Iceberg', cursive; 
+ text-decoration: underline;
+ color: #ffffff;
+ text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+ text-align:center;
+}
+
+p {
+ font-family: 'Iceberg', cursive; 
+ font-size:1.1rem; 
+ margin-bottom:1rem;
+ color: #ffffff;
+} 
+
+img {
+max-width:100%; 
+max-height: 100%;
+} 
+
+body.low-effects .snowflake {
+  filter: none;
+  text-shadow: none;
+  animation-duration: 16s;
+}
+
+body.low-effects .gift-modal-content.animate {
+  animation: fadeIn 0.3s ease-out !important;
+  transform: none !important;
+  margin: auto;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.background-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(ellipse at bottom, #0a0a1f 0%, #000 100%);
+  z-index: -1; /* Make sure it's behind everything */
+  pointer-events: none;
+}
+
+body.low-effects .aurora-layer,
+body.low-effects .aurora-layer.secondary {
+  display: none;
+}
+
 .scene {
   position: relative;
   width: 100vw;
@@ -468,71 +518,7 @@ body, html {
   left: 6em;
 }
 
-/* KeyFrames Animations*/
-@keyframes moonPulse {
-  0%, 100% { box-shadow: 0 0 40px rgba(255,255,255,0.3); }
-  50% { box-shadow: 0 0 60px rgba(255,255,255,0.5); }
-}
-
-@keyframes twinkle {
-  0%, 100% { opacity: 0.8; }
-  50% { opacity: 0.2; }
-}
-
-@keyframes auroraFlow {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes auroraDriftSecondary {
-  0%   { transform: translateX(0%) scaleY(1); }
-  25%  { transform: translateX(5%) scaleY(1.1); }
-  50%  { transform: translateX(10%) scaleY(0.9); }
-  75%  { transform: translateX(6%) scaleY(1.05); }
-  100% { transform: translateX(0%) scaleY(1); }
-}
-
-@keyframes snowFall {
-  0% {
-    transform: translateY(0) translateX(0) rotate(0deg) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100vh) translateX(var(--drift)) rotate(360deg) scale(0.8);
-    opacity: 0.3;
-  }
-}
-
-@keyframes icebearDrift {
-  0% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-52%) translateY(1.5%); }
-  100% { transform: translateX(-48%) translateY(0); }
-}
-
-@keyframes icebearBreath {
-  0%, 100% { transform: scaleY(1); }
-  50% { transform: scaleY(1.15); }
-}
-
-@keyframes snore {
-  30% { transform: rotate(10deg) translateY(0); opacity: 1; }
-  100% { transform: rotate(10deg) translateY(-7em); opacity: 0.2; }
-}
-
-/* Media Screens */
-@media (min-width: 768px) {
-  .container.icebear {
-    font-size: 0.65em;
-  }
-}
-
-@media (max-width: 767px) {
-  .container.icebear {
-    font-size: 0.5em;
-  }
-}
-
+/* Advent Calendar */
 .calendar-wrapper {
   position: absolute;
   top: 0;
@@ -582,7 +568,6 @@ body, html {
   overflow: hidden;
 }
 
-
 /* Bear on top */
 .calendar-box::before,
 .calendar-box::after {
@@ -602,7 +587,6 @@ body, html {
   left: calc(50% + 2px);
 }
 
-
 .gift-bear {
   position: absolute;
   top: -12px; /* moves it above the box */
@@ -615,7 +599,6 @@ body, html {
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
   z-index: 5;
 }
-
 .gift-bear::before,
 .gift-bear::after {
   content: '';
@@ -671,6 +654,7 @@ body, html {
   text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
 }
 
+/* Icons on Calendar Boxes */
 .status-icon {
   position: absolute;
   bottom: 4px;
@@ -679,7 +663,37 @@ body, html {
   z-index: 3;
 }
 
+/* Calendar Box */
+.calendar-box:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.6);
+}
 
+.calendar-box.locked {
+  opacity: 0.5;
+  pointer-events: none;
+  filter: grayscale(100%);
+  position: relative;
+}
+
+.calendar-box.available {
+  background-color: #fff;
+  border: 2px solid #ccc;
+}
+
+.calendar-box.today {
+  background-color: #c8e6c9; /* soft green */
+  border: 2px solid #4caf50;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
+  animation: pulse 2.9s infinite;
+}
+
+.calendar-box.today:hover {
+  transform: scale(1.08) rotate(-1deg);
+  box-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+}
+
+/* Gift Modal */
 .gift-modal {
   position: fixed;
   top: 0;
@@ -736,151 +750,6 @@ body, html {
   z-index: 1000;
 }
 
-
-@keyframes zoomInGift {
-  0% {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-
-.countdown-inline {
-  font-size: 1.2rem;
-  color: #e0f7fa;
-  text-align: center;
-  text-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
-  font-family: 'Iceberg', cursive;
-}
-
-.countdown-value {
-  font-weight: bold;
-  margin-left: 0.3rem;
-  text-shadow:
-    0 0 6px rgba(255, 255, 255, 0.5),
-    0 0 12px rgba(173, 216, 230, 0.4);
-  animation: pulseGlow 2s infinite ease-in-out;
-}
-
-
-
-@keyframes pulseGlow {
-  0%, 100% {
-    text-shadow:
-      0 0 6px rgba(255, 255, 255, 0.5),
-      0 0 12px rgba(173, 216, 230, 0.4);
-  }
-  50% {
-    text-shadow:
-      0 0 10px rgba(255, 255, 255, 0.7),
-      0 0 16px rgba(173, 216, 230, 0.6);
-  }
-}
-
-
-
-
-
-
-.calendar-box:hover {
-  transform: scale(1.05) rotate(-1deg);
-  box-shadow: 0 0 16px rgba(255, 255, 255, 0.6);
-}
-
-
-
-canvas.confetti-canvas {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 10000 !important;
-}
-
-.calendar-box.locked {
-  opacity: 0.5;
-  pointer-events: none;
-  filter: grayscale(100%);
-  position: relative;
-}
-
-.calendar-box.available {
-  background-color: #fff;
-  border: 2px solid #ccc;
-}
-
-.calendar-box.today {
-  background-color: #c8e6c9; /* soft green */
-  border: 2px solid #4caf50;
-  box-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
-  animation: pulse 2.9s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
-  }
-  50% {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
-  }
-}
-
-
-.calendar-box.today:hover {
-  transform: scale(1.08) rotate(-1deg);
-  box-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
-}
-
-.calendar-title {
-  text-align: center;
-  margin-top: 1rem;
-}
-
-.calendar-logo {
-  max-width: 90%;
-  width: 600px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  animation: fadeIn 1.5s ease forwards;
-  filter: drop-shadow(0 0 6px rgba(255, 244, 229, 0.5)); /* soft warm-white glow */
-}
-
-/* For tablets with heigh up to 800px like Nest Hub, Nest Hub Max(tablets) */
-@media screen and (max-height: 800px) {
-  .calendar-logo {
-    width: 350px;
-  }
-}
-
-
-/* Medium screens (tablets, small laptops) */
-@media screen and (max-width: 768px) {
-  .calendar-logo {
-    width: 400px;
-  }
-}
-
-/* Small screens (phones) */
-@media screen and (max-width: 480px) {
-  .calendar-logo {
-    width: 280px;
-  }
-}
-
-
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
 .gift-title {
   text-align: center;
   font-family: 'Iceberg', cursive;
@@ -907,116 +776,8 @@ canvas.confetti-canvas {
   border-image: linear-gradient(135deg, #ffd700, #f5deb3, #fff8dc, #ffecb3) 1;
 }
 
-a {
- font-family: 'Iceberg', cursive; 
- text-decoration: underline;
- color: #ffffff;
- text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
- text-align:center;
-}
-
-p {
- font-family: 'Iceberg', cursive; 
- font-size:1.1rem; 
- margin-bottom:1rem;
- color: #ffffff;
-} 
-
-img {
-max-width:100%; 
-max-height: 100%;
-} 
-
-@media (max-width: 500px) {
-  .gift-modal-content.animate {
-    animation: none !important;
-    transform: scale(1) !important;
-  }
-  .snowflake {
-    filter: none;
-    text-shadow: none;
-    animation-duration: 16s;
-  }
-}
-
-body.low-effects .snowflake {
-  filter: none;
-  text-shadow: none;
-  animation-duration: 16s;
-}
-
-body.low-effects .gift-modal-content.animate {
-  animation: fadeIn 0.3s ease-out !important;
-  transform: none !important;
-  margin: auto;
-  max-width: 90vw;
-  max-height: 90vh;
-}
-
-
-
-.background-layer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: radial-gradient(ellipse at bottom, #0a0a1f 0%, #000 100%);
-  z-index: -1; /* Make sure it's behind everything */
-  pointer-events: none;
-}
-
-
-body.low-effects .aurora-layer,
-body.low-effects .aurora-layer.secondary {
-  display: none;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .aurora-layer,
-  .aurora-layer.secondary {
-    display: none;
-  }
-
-  .background-layer {
-    display: block;
-  }
-}
-
 .gift-modal-content {
   position: relative;
-}
-
-.creator-tag {
-  position: fixed;
-  bottom: 1.5em;
-  right: 1.5em;
-  font-size: 0.9rem;
-  color: #fff;
-  opacity: 0.6;
-  font-family: 'Iceberg', cursive;
-  pointer-events: none;
-  z-index: 999;
-  text-shadow: 0 0 5px #fff;
-  background: rgba(0, 0, 0, 0.3);
-  padding: 0.2em 0.5em;
-  border-radius: 4px;
-}
-
-@media (max-width: 600px) {
-  .creator-tag {
-    font-size: 0.75rem;
-    bottom: 1em;
-    right: 1em;
-  }
-}
-
-@keyframes bobbleBadge {
-  0%   { transform: rotateZ(0deg); }
-  25%  { transform: rotateZ(2deg); }
-  50%  { transform: rotateZ(0deg); }
-  75%  { transform: rotateZ(-2deg); }
-  100% { transform: rotateZ(0deg); }
 }
 
 .bobbling-badge {
@@ -1052,11 +813,232 @@ body.low-effects .aurora-layer.secondary {
   pointer-events: none;
 }
 
+.calendar-title {
+  text-align: center;
+  margin-top: 1rem;
+}
 
+/* Logo */
+.calendar-logo {
+  max-width: 90%;
+  width: 600px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  animation: fadeIn 1.5s ease forwards;
+  filter: drop-shadow(0 0 6px rgba(255, 244, 229, 0.5)); /* soft warm-white glow */
+}
+
+/* Countdown */
+.countdown-inline {
+  font-size: 1.2rem;
+  color: #e0f7fa;
+  text-align: center;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
+  font-family: 'Iceberg', cursive;
+}
+
+.countdown-value {
+  font-weight: bold;
+  margin-left: 0.3rem;
+  text-shadow:
+    0 0 6px rgba(255, 255, 255, 0.5),
+    0 0 12px rgba(173, 216, 230, 0.4);
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+/* Confetti */
+canvas.confetti-canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10000 !important;
+}
+
+/* Creator Name */
+.creator-tag {
+  position: fixed;
+  bottom: 1.5em;
+  right: 1.5em;
+  font-size: 0.9rem;
+  color: #fff;
+  opacity: 0.6;
+  font-family: 'Iceberg', cursive;
+  pointer-events: none;
+  z-index: 999;
+  text-shadow: 0 0 5px #fff;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.2em 0.5em;
+  border-radius: 4px;
+}
+
+/* KeyFrames Animations*/
+@keyframes moonPulse {
+  0%, 100% { box-shadow: 0 0 40px rgba(255,255,255,0.3); }
+  50% { box-shadow: 0 0 60px rgba(255,255,255,0.5); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.2; }
+}
+
+@keyframes auroraFlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes auroraDriftSecondary {
+  0%   { transform: translateX(0%) scaleY(1); }
+  25%  { transform: translateX(5%) scaleY(1.1); }
+  50%  { transform: translateX(10%) scaleY(0.9); }
+  75%  { transform: translateX(6%) scaleY(1.05); }
+  100% { transform: translateX(0%) scaleY(1); }
+}
+
+@keyframes snowFall {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) translateX(var(--drift)) rotate(360deg) scale(0.8);
+    opacity: 0.3;
+  }
+}
+
+@keyframes icebearDrift {
+  0% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-52%) translateY(1.5%); }
+  100% { transform: translateX(-48%) translateY(0); }
+}
+
+@keyframes icebearBreath {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.15); }
+}
+
+@keyframes snore {
+  30% { transform: rotate(10deg) translateY(0); opacity: 1; }
+  100% { transform: rotate(10deg) translateY(-7em); opacity: 0.2; }
+}
+
+@keyframes zoomInGift {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 6px rgba(255, 255, 255, 0.5),
+      0 0 12px rgba(173, 216, 230, 0.4);
+  }
+  50% {
+    text-shadow:
+      0 0 10px rgba(255, 255, 255, 0.7),
+      0 0 16px rgba(173, 216, 230, 0.6);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes bobbleBadge {
+  0%   { transform: rotateZ(0deg); }
+  25%  { transform: rotateZ(2deg); }
+  50%  { transform: rotateZ(0deg); }
+  75%  { transform: rotateZ(-2deg); }
+  100% { transform: rotateZ(0deg); }
+}
 
 @keyframes shine {
   0% { left: -75%; }
   100% { left: 125%; }
 }
 
+/* Media Screens */
+@media (min-width: 768px) {
+  .container.icebear {
+    font-size: 0.65em;
+  }
+}
 
+@media (max-width: 767px) {
+  .container.icebear {
+    font-size: 0.5em;
+  }
+}
+
+/* For tablets with heigh up to 800px like Nest Hub, Nest Hub Max(tablets) */
+@media screen and (max-height: 800px) {
+  .calendar-logo {
+    width: 350px;
+  }
+}
+
+/* Medium screens (tablets, small laptops) */
+@media screen and (max-width: 768px) {
+  .calendar-logo {
+    width: 400px;
+  }
+}
+
+/* Small screens (phones) */
+@media screen and (max-width: 480px) {
+  .calendar-logo {
+    width: 280px;
+  }
+}
+
+@media (max-width: 500px) {
+  .gift-modal-content.animate {
+    animation: none !important;
+    transform: scale(1) !important;
+  }
+  .snowflake {
+    filter: none;
+    text-shadow: none;
+    animation-duration: 16s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora-layer,
+  .aurora-layer.secondary {
+    display: none;
+  }
+
+  .background-layer {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .creator-tag {
+    font-size: 0.75rem;
+    bottom: 1em;
+    right: 1em;
+  }
+}
