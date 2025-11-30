@@ -518,21 +518,31 @@ export function updateCountdown(now, currentYear) {
   const countdownWrapper = document.querySelector('.countdown-timer');
   const calendarStart = new Date(currentYear, 11, 1, 0, 0);
 
+  // Before December 1 → hide countdown
   if (now < calendarStart) {
     countdownWrapper.style.display = 'none';
     return;
   }
+
+  // From December 1 onward → always show countdown
+  countdownWrapper.style.display = 'block';
+
+  // After December 24 → show closing message
   if (now.getDate() > 24 && now.getMonth() === 11) {
     countdownPrefix.textContent = '';
-    countdownEl.textContent = '🎄 Hope you had a magical Christmas, see you next year! - Vanja & Annette 💛';
+    countdownEl.textContent =
+      '🎄 Hope you had a magical Christmas, see you next year! - Vanja & Annette 💛';
     return;
   }
+
+  // On Christmas Eve → special message
   if (isChristmasEve(now)) {
     countdownPrefix.textContent = '';
     countdownEl.textContent = '🎄 Merry Christmas!';
     return;
   }
 
+  // Otherwise → countdown to next midnight
   const nextUnlock = new Date(now);
   nextUnlock.setDate(now.getDate() + 1);
   nextUnlock.setHours(0, 0, 0, 0);
