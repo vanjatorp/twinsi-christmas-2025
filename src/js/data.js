@@ -47,7 +47,7 @@ export const gifts = [
   { type: 'baristalysvideo', url: 'https://youtu.be/nc3UBeg13fg' }, // Dec 5
   { type: 'poem1', url: 'assets/gifts/the-spirit-of-christmas-poem.png' },  // Dec 6
   { type: 'christmas-game', url: 'https://vanjatorp.github.io/twinsi-cookie-catch/' }, // Dec 7 
-  { type: 'tarot1', url: 'https://youtu.be/nc3UBeg13fg' },  // Dec 8
+  { type: 'tarot1', url: 'https://youtu.be/dz6H6huZb9w' },  // Dec 8
   { type: 'card-challenge', text: 'Send a Christmas card to someone who wouldn’t expect it.' },  // Dec 9
   { type: 'poem2', url: 'assets/gifts/light-in-the-dark-poem.png' },  // Dec 10
   { type: 'encouragement1', text: '' },  // Dec 11
