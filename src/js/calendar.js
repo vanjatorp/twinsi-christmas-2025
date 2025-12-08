@@ -184,7 +184,7 @@ export function createBox(day, now, currentYear, confettiCanvas) {
               Let’s see what they reveal…
             </p>
             <p>
-              ✨ <a href="https://youtu.be/nc3UBeg13fg" target="_blank" class="calendar-link">Watch the Reading</a>
+              ✨ <a href="https://youtu.be/dz6H6huZb9w" target="_blank" class="calendar-link">Watch the Reading</a>
             </p>
           </div>
         `;
