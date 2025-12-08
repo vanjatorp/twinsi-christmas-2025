@@ -184,7 +184,7 @@ export function createBox(day, now, currentYear, confettiCanvas) {
               Let’s see what they reveal…
             </p>
             <p>
-              ✨ <a href="https://youtu.be/dz6H6huZb9w" target="_blank" class="calendar-link">Watch the Reading</a>
+              ✨ <a href="${gift.url}" target="_blank" class="calendar-link">Watch the Reading</a>
             </p>
           </div>
         `;
@@ -313,7 +313,7 @@ export function createBox(day, now, currentYear, confettiCanvas) {
               Let’s see what they reveal…
             </p>
             <p>
-              ✨ <a href="https://youtu.be/nc3UBeg13fg" target="_blank" class="calendar-link">Watch the Reading</a>
+              ✨ <a href="${gift.url}" target="_blank" class="calendar-link">Watch the Reading</a>
             </p>
           </div>
         `;
@@ -425,7 +425,7 @@ export function createBox(day, now, currentYear, confettiCanvas) {
               Let’s see what they reveal…
             </p>
             <p>
-              ✨ <a href="https://youtu.be/nc3UBeg13fg" target="_blank" class="calendar-link">Watch the Reading</a>
+              ✨ <a href="${gift.url}" target="_blank" class="calendar-link">Watch the Reading</a>
             </p>
           </div>
         `;
@@ -457,7 +457,7 @@ export function createBox(day, now, currentYear, confettiCanvas) {
           </p>
           <img src="https://m.media-amazon.com/images/I/71-afjTgIJL._SL1500_.jpg" alt="Bear & Rabbit book cover" style="width:40%; max-width:400px;" />
           <p>
-            ✨ <a href="https://www.amazon.com/dp/B0FLF7PN6M" target="_blank" class="calendar-link">Open the Gift</a>
+            ✨ <a href="${gift.url}" target="_blank" class="calendar-link">Open the Gift</a>
           </p>
           <p>
             Twinsi Bear hopes it finds you at just the right time.  
