@@ -54,7 +54,7 @@ export const gifts = [
   { type: 'unperfectdate-game', url: 'https://vanjatorp.github.io/UN-PERFECT-DATE/' },  // Dec 12 
   { type: 'drawing-challenge', text: '' },  // Dec 13
   { type: 'poem3', url: 'assets/gifts/christmas- reflections-poem.png' },  // Dec 14
-  { type: 'tarot2', url: 'https://youtu.be/nc3UBeg13fg' },  // Dec 15
+  { type: 'tarot2', url: 'https://youtu.be/Bm1N6_uJ7Ys' },  // Dec 15
   { type: 'encouragement2', text: '' },  // Dec 16
   { type: 'takeawalk-challenge', text: '' },  // Dec 17
   { type: 'magikerenogmånenvideo', url: 'https://youtu.be/5p37EXWx2hY' }, // Dec 18
