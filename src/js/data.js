@@ -61,7 +61,7 @@ export const gifts = [
   { type: 'poem4', url: 'assets/gifts/sun-and-moon-poem.png' },  // Dec 19
   { type: 'encouragement3', text: '' },  // Dec 20
   { type: 'reachout-challenge', text: '' },  // Dec 21
-  { type: 'tarot3', url: 'https://youtu.be/nc3UBeg13fg' },  // Dec 22
+  { type: 'tarot3', url: 'https://youtu.be/HcHfPDCuymI' }, // Dec 22
   { type: 'ottherlyvideo', url: 'https://youtu.be/zLyvomM4IlY' }, // Dec 23
   { type: 'bookgift', url: 'https://www.amazon.com/dp/B0FLF7PN6M' }, // Dec 24
   // Add up to 24 gifts
