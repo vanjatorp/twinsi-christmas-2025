@@ -449,7 +449,7 @@ export function createBox(day, now, currentYear, confettiCanvas) {
           <p>
             Today, something special is waiting for you —  
             <strong>Bear & Rabbit: A Fable About Healing and Boundaries</strong>  
-            is free on <strong>Kindle</strong> for the next 5 days.
+            is free on <strong>Kindle</strong> from 12:00am PST (Oslo time 21:00) today and until December 28th 11:59 PST.
           </p>
           <p>
             This is a heart-led fable about emotional healing, relational repair, and the power of boundaries.  
